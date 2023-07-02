@@ -1,76 +1,17 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {SafeAreaView, Platform, StatusBar} from 'react-native';
-import styled from 'styled-components/native';
-import Icon from 'react-native-vector-icons/Feather';
+import { NavigationContainer } from '@react-navigation/native';
+import { View } from 'react-native';
+
+import CurrentWeather from './src/components/current-weather';
 
 const App = () => {
   return (
     <NavigationContainer>
-      <SafeAreaView
-        style={{
-          paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
-          backgroundColor: 'pink',
-          flex: 1,
-        }}>
-        <Wrapper>
-          <Icon name="sun" size={100} />
-          <TempText>6</TempText>
-          <FeelsTex>Feels like 5</FeelsTex>
-
-          <DetailsView>
-            <HighLowText>High: 8</HighLowText>
-            <HighLowText>Low: 6</HighLowText>
-          </DetailsView>
-        </Wrapper>
-
-        <FooterWrapper>
-          <FooterDescription>It's sunny</FooterDescription>
-          <FooterMessage>It's perfect t-shirt weather</FooterMessage>
-        </FooterWrapper>
-      </SafeAreaView>
+      <View style={{ flex: 1 }}>
+        <CurrentWeather />
+      </View>
     </NavigationContainer>
   );
 };
-
-const Wrapper = styled.View`
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-`;
-
-const DetailsView = styled.View`
-  flex-direction: row;
-`;
-
-const TempText = styled.Text`
-  color: #000;
-  font-size: 48px;
-`;
-
-const FeelsTex = styled.Text`
-  font-size: 30px;
-  color: #000;
-`;
-
-const HighLowText = styled.Text`
-  color: #000;
-  font-size: 20px;
-`;
-
-export const FooterWrapper = styled.View`
-  justify-content: flex-end;
-  align-items: flex-start;
-  padding-left: 25px;
-  margin-bottom: 40px;
-`;
-
-export const FooterDescription = styled.Text`
-  font-size: 48px;
-`;
-
-export const FooterMessage = styled.Text`
-  font-size: 30px;
-`;
 
 export default App;
