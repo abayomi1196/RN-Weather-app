@@ -2,6 +2,7 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {SafeAreaView, Platform, StatusBar} from 'react-native';
 import styled from 'styled-components/native';
+import Icon from 'react-native-vector-icons/Feather';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
           flex: 1,
         }}>
         <Wrapper>
+          <Icon name="sun" size={100} />
           <TempText>6</TempText>
           <FeelsTex>Feels like 5</FeelsTex>
 
@@ -34,6 +36,7 @@ const App = () => {
 const Wrapper = styled.View`
   flex: 1;
   align-items: center;
+  justify-content: center;
 `;
 
 const DetailsView = styled.View`
@@ -58,6 +61,8 @@ const HighLowText = styled.Text`
 export const FooterWrapper = styled.View`
   justify-content: flex-end;
   align-items: flex-start;
+  padding-left: 25px;
+  margin-bottom: 40px;
 `;
 
 export const FooterDescription = styled.Text`
