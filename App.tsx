@@ -1,6 +1,6 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {SafeAreaView, Platform, StatusBar, View, Text} from 'react-native';
+import {SafeAreaView, Platform, StatusBar} from 'react-native';
 import styled from 'styled-components/native';
 
 const App = () => {
