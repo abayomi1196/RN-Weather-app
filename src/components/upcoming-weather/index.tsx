@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, FlatList, View } from 'react-native';
+import { Text, FlatList, View, Image, ImageBackground } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
 import { Container, ItemView, TempText, DateText } from './styles';
@@ -64,20 +64,26 @@ const Empty = () => (
 const UpcomingWeather = () => {
   return (
     <Container>
-      <Text>Upcoming weather</Text>
-      <FlatList
-        data={DATA}
-        renderItem={({ item }) => (
-          <Item
-            dt_text={item.dt_txt}
-            min={item.main.temp_min}
-            max={item.main.temp_max}
-            condition={item.weather.main}
-          />
-        )}
-        keyExtractor={(item) => item.dt_txt}
-        ListEmptyComponent={<Empty />}
-      />
+      <ImageBackground
+        style={{ flex: 1 }}
+        source={require('../../assets/cloud-bg.jpg')}
+      >
+        <Text>Upcoming weather</Text>
+
+        <FlatList
+          data={DATA}
+          renderItem={({ item }) => (
+            <Item
+              dt_text={item.dt_txt}
+              min={item.main.temp_min}
+              max={item.main.temp_max}
+              condition={item.weather.main}
+            />
+          )}
+          keyExtractor={(item) => item.dt_txt}
+          ListEmptyComponent={<Empty />}
+        />
+      </ImageBackground>
     </Container>
   );
 };

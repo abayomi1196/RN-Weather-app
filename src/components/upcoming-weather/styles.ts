@@ -4,7 +4,7 @@ import { StatusBar } from 'react-native';
 export const Container = styled.SafeAreaView`
   flex: 1;
   margin-top: ${StatusBar.currentHeight || 0};
-  background-color: #08b;
+  background-color: #9dbcd0;
 `;
 
 export const ItemView = styled.View`
@@ -26,3 +26,5 @@ export const DateText = styled.Text`
   color: #fff;
   font-size: 15px;
 `;
+
+export const StyledImage = styled.Image``;
