@@ -1,11 +1,4 @@
 import styled from 'styled-components/native';
-import { StatusBar } from 'react-native';
-
-export const Container = styled.SafeAreaView`
-  flex: 1;
-  margin-top: ${StatusBar.currentHeight || 0};
-  background-color: #9dbcd0;
-`;
 
 export const ItemView = styled.View`
   padding: 20px;
@@ -26,5 +19,3 @@ export const DateText = styled.Text`
   color: #fff;
   font-size: 15px;
 `;
-
-export const StyledImage = styled.Image``;

@@ -1,8 +1,8 @@
 import React from 'react';
-import { Text, FlatList, View, Image, ImageBackground } from 'react-native';
-import Icon from 'react-native-vector-icons/Feather';
+import { Text, FlatList, View, ImageBackground } from 'react-native';
 
-import { Container, ItemView, TempText, DateText } from './styles';
+import { ListItem } from '../../components';
+import { Container } from './styles';
 
 const DATA = [
   {
@@ -38,23 +38,6 @@ const DATA = [
   },
 ];
 
-type ItemProps = {
-  dt_text: string;
-  min: number;
-  max: number;
-  condition: string;
-};
-
-const Item = ({ dt_text, min, max, condition }: ItemProps) => (
-  <ItemView>
-    <Icon name="sun" size={50} color={'white'} />
-    <DateText>{dt_text}</DateText>
-    <TempText>{min}</TempText>
-    <TempText>{max}</TempText>
-    <Text>{condition}</Text>
-  </ItemView>
-);
-
 const Empty = () => (
   <View>
     <Text>Empty list</Text>
@@ -73,7 +56,7 @@ const UpcomingWeather = () => {
         <FlatList
           data={DATA}
           renderItem={({ item }) => (
-            <Item
+            <ListItem
               dt_text={item.dt_txt}
               min={item.main.temp_min}
               max={item.main.temp_max}
